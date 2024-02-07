@@ -145,7 +145,7 @@ userRoute.patch("/update/:userId", auth, async (req, res) => {
   }
 });
 
-userRoute.delete("/delete/:userId", async (req, res) => {
+userRoute.delete("/delete/:userId", auth, async (req, res) => {
   try {
     if (req.body.role === "admin" || req.body.userID === req.params.userId) {
       const userId = req.params.userId;
